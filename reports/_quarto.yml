@@ -1,5 +1,7 @@
 project:
   type: book
+  output-dir: ../docs
+  execute-dir: project
 
 book:
   title: "reports"
@@ -10,14 +12,21 @@ book:
     - intro.qmd
     - summary.qmd
     - references.qmd
+  favicon: assets/favicon.png
+  sidebar:
+    logo: assets/blueprint-logo.png
 
 bibliography: references.bib
 
+execute: 
+  cache: true
+
 format:
   html:
-    theme: cosmo
+    theme: 
+      - cosmo
+      - custom.scss
   pdf:
     documentclass: scrreprt
-
 
 

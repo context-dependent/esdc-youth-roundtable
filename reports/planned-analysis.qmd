@@ -1,0 +1,57 @@
+# Planned Analysis
+
+
+```{r data-and-packages}
+library(censuspumf)
+library(tidyverse)
+library(gt)
+
+d <- censuspumf::records |> 
+  censuspumf::encode_labels() |> 
+  mutate(
+    is_working_age_lgl = as.integer(AGEGRP) |> between(7, 16),
+    is_youth_lgl = as.integer(AGEGRP) |> between(7, 9),
+  )
+```
+
+
+## Youth Demographics
+
+- Youth are defined as individuals aged 18 to 29. We care about this group because they are old enough that most of them have a relationship to the labour market, but young enough that they are still in the process of forming their careers and lives. 
+- Youth, as defined, comprise roughly 15% of the Canadian population and 24% of the working-age population.
+- Compared to other Canadians of working age, higher proportions of youth are:
+  - Attending school (41.1% vs 4.5%)
+  - 
+
+```{r demographics}
+t_rep_pop <- d |> 
+  filter(!is.na(AGEGRP)) |> 
+  group_by(AGEGRP, is_youth_lgl, is_working_age_lgl) |> 
+  summarize(n = sum(WEIGHT), .groups = "drop") |> 
+  mutate(
+    rep_pop = n / sum(n), cumulative_pop = cumsum(rep_pop * is_youth_lgl), 
+    rep_working_age = (n * is_working_age_lgl) / sum(n * is_working_age_lgl), 
+    cumulative_working_age = cumsum(rep_working_age * is_youth_lgl)
+  )
+
+d |> 
+  glimpse()
+
+t_demos <- d |> 
+  pivot_longer(
+    cols = c(IMMSTAT, Gender, ABOID, COW, HDGREE, LFACT, ATTSCH), 
+    names_to = "variable", values_to = "value"
+  ) |> 
+  filter(!is.na(AGEGRP), is_working_age_lgl, !is.na(value)) |> 
+  group_by(is_youth_lgl, variable, value) |>
+  summarize(n = sum(WEIGHT), .groups = "drop_last") |> 
+  mutate(
+    p = n / sum(n)
+  )  |> 
+  select(-n) |> 
+  pivot_wider(names_from = is_youth_lgl, values_from = p) |> 
+  gt(groupname_col = "variable", rowname_col = "value") |> 
+  fmt_percent(columns = c(`FALSE`, `TRUE`), decimals = 1)
+
+t_demos
+```
