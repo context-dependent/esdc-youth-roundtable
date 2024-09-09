@@ -1,0 +1,3608 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>reports - 1&nbsp; Planned Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./index.html" rel="prev">
+<link href="./assets/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./planned-analysis.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planned Analysis</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./assets/blueprint-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">reports</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planned-analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planned Analysis</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#youth-representation-in-the-canadian-population" id="toc-youth-representation-in-the-canadian-population" class="nav-link active" data-scroll-target="#youth-representation-in-the-canadian-population"><span class="header-section-number">1.1</span> Youth Representation in the Canadian Population</a></li>
+  <li><a href="#youth-distribution-across-provinces" id="toc-youth-distribution-across-provinces" class="nav-link" data-scroll-target="#youth-distribution-across-provinces"><span class="header-section-number">1.2</span> Youth Distribution Across Provinces</a></li>
+  <li><a href="#youth-demographics" id="toc-youth-demographics" class="nav-link" data-scroll-target="#youth-demographics"><span class="header-section-number">1.3</span> Youth Demographics</a></li>
+  <li><a href="#youth-education-and-labour-force-status" id="toc-youth-education-and-labour-force-status" class="nav-link" data-scroll-target="#youth-education-and-labour-force-status"><span class="header-section-number">1.4</span> Youth Education and Labour Force Status</a>
+  <ul class="collapse">
+  <li><a href="#key-finding-the-canadian-labour-force-is-growing-more-educated" id="toc-key-finding-the-canadian-labour-force-is-growing-more-educated" class="nav-link" data-scroll-target="#key-finding-the-canadian-labour-force-is-growing-more-educated"><span class="header-section-number">1.4.1</span> Key Finding: The Canadian Labour Force is Growing More Educated</a></li>
+  <li><a href="#key-finding-the-neet-youth-population-is-too-large-to-ignore" id="toc-key-finding-the-neet-youth-population-is-too-large-to-ignore" class="nav-link" data-scroll-target="#key-finding-the-neet-youth-population-is-too-large-to-ignore"><span class="header-section-number">1.4.2</span> Key Finding: The NEET Youth Population is Too Large to Ignore</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Planned Analysis</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(censuspumf)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'gt' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d0 <span class="ot">&lt;-</span> censuspumf<span class="sc">::</span>records <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  censuspumf<span class="sc">::</span><span class="fu">encode_labels</span>() </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> d0 <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_working_age_lgl =</span> <span class="fu">as.integer</span>(AGEGRP) <span class="sc">|&gt;</span> <span class="fu">between</span>(<span class="dv">7</span>, <span class="dv">16</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_youth_lgl =</span> <span class="fu">as.integer</span>(AGEGRP) <span class="sc">|&gt;</span> <span class="fu">between</span>(<span class="dv">7</span>, <span class="dv">9</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_youth_fct =</span> <span class="fu">factor</span>(is_youth_lgl <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Youth (18-29)"</span>, <span class="st">"Not Youth (30-64)"</span>)),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lf_status =</span> LFACT <span class="sc">|&gt;</span> <span class="fu">str_extract</span>(<span class="st">"Employed|Unemployed|Not in the labour force"</span>) <span class="sc">|&gt;</span> <span class="fu">fct_relevel</span>(<span class="st">"Employed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Not in the labour force"</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">lf_status_neet =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      lf_status <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Unemployed"</span>, <span class="st">"Not in the labour force"</span>) <span class="sc">&amp;</span> ATTSCH <span class="sc">==</span> <span class="st">"Did not attend school"</span> <span class="sc">~</span> <span class="st">"Not in Employment, Education, or Training (NEET)"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="fu">as.character</span>(lf_status)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fct_relevel</span>(<span class="st">"Employed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Not in the labour force"</span>, <span class="st">"Not in Employment, Education, or Training (NEET)"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="youth-representation-in-the-canadian-population" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="youth-representation-in-the-canadian-population"><span class="header-section-number">1.1</span> Youth Representation in the Canadian Population</h2>
+<ul>
+<li>In this analysis, Youth are defined as individuals aged 18 to 29. We care about this group because they are old enough that most of them have a relationship to the labour market, but young enough that they are still in the process of forming their careers and lives.</li>
+<li>Youth, as defined, comprise roughly 15% of the Canadian population and 24% of the working-age population.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>t_rep_pop <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(AGEGRP)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(AGEGRP, is_youth_lgl, is_working_age_lgl) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">rep_pop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="at">cumulative_pop =</span> <span class="fu">cumsum</span>(rep_pop <span class="sc">*</span> is_youth_lgl), </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">rep_working_age =</span> (n <span class="sc">*</span> is_working_age_lgl) <span class="sc">/</span> <span class="fu">sum</span>(n <span class="sc">*</span> is_working_age_lgl), </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">cumulative_working_age =</span> <span class="fu">cumsum</span>(rep_working_age <span class="sc">*</span> is_youth_lgl)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>t_rep_pop <span class="sc">|&gt;</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(rep_pop<span class="sc">:</span>cumulative_working_age), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="gwohmnoruk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gwohmnoruk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gwohmnoruk thead, #gwohmnoruk tbody, #gwohmnoruk tfoot, #gwohmnoruk tr, #gwohmnoruk td, #gwohmnoruk th {
+  border-style: none;
+}
+
+#gwohmnoruk p {
+  margin: 0;
+  padding: 0;
+}
+
+#gwohmnoruk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gwohmnoruk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gwohmnoruk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gwohmnoruk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gwohmnoruk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gwohmnoruk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gwohmnoruk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gwohmnoruk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gwohmnoruk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gwohmnoruk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gwohmnoruk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gwohmnoruk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gwohmnoruk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gwohmnoruk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gwohmnoruk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gwohmnoruk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gwohmnoruk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gwohmnoruk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gwohmnoruk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gwohmnoruk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gwohmnoruk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gwohmnoruk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gwohmnoruk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gwohmnoruk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gwohmnoruk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gwohmnoruk .gt_left {
+  text-align: left;
+}
+
+#gwohmnoruk .gt_center {
+  text-align: center;
+}
+
+#gwohmnoruk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gwohmnoruk .gt_font_normal {
+  font-weight: normal;
+}
+
+#gwohmnoruk .gt_font_bold {
+  font-weight: bold;
+}
+
+#gwohmnoruk .gt_font_italic {
+  font-style: italic;
+}
+
+#gwohmnoruk .gt_super {
+  font-size: 65%;
+}
+
+#gwohmnoruk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gwohmnoruk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gwohmnoruk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gwohmnoruk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gwohmnoruk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gwohmnoruk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gwohmnoruk .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="AGEGRP" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">AGEGRP</th>
+<th id="is_youth_lgl" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">is_youth_lgl</th>
+<th id="is_working_age_lgl" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">is_working_age_lgl</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="rep_pop" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">rep_pop</th>
+<th id="cumulative_pop" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">cumulative_pop</th>
+<th id="rep_working_age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">rep_working_age</th>
+<th id="cumulative_working_age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">cumulative_working_age</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">0 to 4 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">1817305.3</td>
+<td class="gt_row gt_right" headers="rep_pop">5%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">0%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">0%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">5 to 6 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">810764.1</td>
+<td class="gt_row gt_right" headers="rep_pop">2%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">0%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">0%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">7 to 9 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">1240983.0</td>
+<td class="gt_row gt_right" headers="rep_pop">3%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">0%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">0%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">10 to 11 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">848919.1</td>
+<td class="gt_row gt_right" headers="rep_pop">2%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">0%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">0%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">12 to 14 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">1277171.4</td>
+<td class="gt_row gt_right" headers="rep_pop">4%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">0%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">0%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">15 to 17 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">1195913.2</td>
+<td class="gt_row gt_right" headers="rep_pop">3%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">0%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">0%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">18 to 19 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">TRUE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">773961.0</td>
+<td class="gt_row gt_right" headers="rep_pop">2%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">2%</td>
+<td class="gt_row gt_right" headers="rep_working_age">3%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">3%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">20 to 24 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">TRUE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2166090.1</td>
+<td class="gt_row gt_right" headers="rep_pop">6%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">8%</td>
+<td class="gt_row gt_right" headers="rep_working_age">10%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">13%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">25 to 29 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">TRUE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2398480.2</td>
+<td class="gt_row gt_right" headers="rep_pop">7%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">11%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">30 to 34 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2495961.1</td>
+<td class="gt_row gt_right" headers="rep_pop">7%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">11%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">35 to 39 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2503889.7</td>
+<td class="gt_row gt_right" headers="rep_pop">7%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">11%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">40 to 44 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2379916.9</td>
+<td class="gt_row gt_right" headers="rep_pop">7%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">11%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">45 to 49 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2269550.1</td>
+<td class="gt_row gt_right" headers="rep_pop">6%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">10%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">50 to 54 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2338141.9</td>
+<td class="gt_row gt_right" headers="rep_pop">6%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">10%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">55 to 59 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2625887.2</td>
+<td class="gt_row gt_right" headers="rep_pop">7%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">12%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">60 to 64 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">TRUE</td>
+<td class="gt_row gt_right" headers="n">2525859.1</td>
+<td class="gt_row gt_right" headers="rep_pop">7%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">11%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">65 to 69 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">2160082.5</td>
+<td class="gt_row gt_right" headers="rep_pop">6%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">70 to 74 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">1786901.5</td>
+<td class="gt_row gt_right" headers="rep_pop">5%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">75 to 79 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">1203562.3</td>
+<td class="gt_row gt_right" headers="rep_pop">3%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="AGEGRP">80 to 84 years</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">741917.0</td>
+<td class="gt_row gt_right" headers="rep_pop">2%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="AGEGRP">85 years and over</td>
+<td class="gt_row gt_center" headers="is_youth_lgl">FALSE</td>
+<td class="gt_row gt_center" headers="is_working_age_lgl">FALSE</td>
+<td class="gt_row gt_right" headers="n">613097.2</td>
+<td class="gt_row gt_right" headers="rep_pop">2%</td>
+<td class="gt_row gt_right" headers="cumulative_pop">15%</td>
+<td class="gt_row gt_right" headers="rep_working_age">0%</td>
+<td class="gt_row gt_right" headers="cumulative_working_age">24%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="youth-distribution-across-provinces" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="youth-distribution-across-provinces"><span class="header-section-number">1.2</span> Youth Distribution Across Provinces</h2>
+<p>The distribution of youth across provinces is very similar to the distribution of the general population.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>t_prov_youth <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(PR), is_youth_lgl) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(PR) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Youth 18-29 (%)</span><span class="st">`</span> <span class="ot">=</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Youth 18-29 (n)</span><span class="st">`</span> <span class="ot">=</span> n)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>t_prov_all <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(PR)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(PR) <span class="sc">|&gt;</span> </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">All Ages (%)</span><span class="st">`</span> <span class="ot">=</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">All Ages (n)</span><span class="st">`</span> <span class="ot">=</span> n)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>t_prov_youth <span class="sc">|&gt;</span> </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(t_prov_all, <span class="at">by =</span> <span class="st">"PR"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"PR"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="vercdwmazy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vercdwmazy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vercdwmazy thead, #vercdwmazy tbody, #vercdwmazy tfoot, #vercdwmazy tr, #vercdwmazy td, #vercdwmazy th {
+  border-style: none;
+}
+
+#vercdwmazy p {
+  margin: 0;
+  padding: 0;
+}
+
+#vercdwmazy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vercdwmazy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vercdwmazy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vercdwmazy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vercdwmazy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vercdwmazy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vercdwmazy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vercdwmazy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vercdwmazy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vercdwmazy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vercdwmazy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vercdwmazy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vercdwmazy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vercdwmazy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vercdwmazy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vercdwmazy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vercdwmazy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vercdwmazy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vercdwmazy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vercdwmazy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vercdwmazy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vercdwmazy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vercdwmazy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vercdwmazy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vercdwmazy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vercdwmazy .gt_left {
+  text-align: left;
+}
+
+#vercdwmazy .gt_center {
+  text-align: center;
+}
+
+#vercdwmazy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vercdwmazy .gt_font_normal {
+  font-weight: normal;
+}
+
+#vercdwmazy .gt_font_bold {
+  font-weight: bold;
+}
+
+#vercdwmazy .gt_font_italic {
+  font-style: italic;
+}
+
+#vercdwmazy .gt_super {
+  font-size: 65%;
+}
+
+#vercdwmazy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vercdwmazy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vercdwmazy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vercdwmazy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vercdwmazy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vercdwmazy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vercdwmazy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Youth 18-29 (n)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Youth 18-29 (n)</th>
+<th id="Youth 18-29 (%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Youth 18-29 (%)</th>
+<th id="All Ages (n)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">All Ages (n)</th>
+<th id="All Ages (%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">All Ages (%)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Newfoundland and Labrador</td>
+<td class="gt_row gt_right" headers="stub_1_1 Youth 18-29 (n)">59,502</td>
+<td class="gt_row gt_right" headers="stub_1_1 Youth 18-29 (%)">1%</td>
+<td class="gt_row gt_right" headers="stub_1_1 All Ages (n)">502,098</td>
+<td class="gt_row gt_right" headers="stub_1_1 All Ages (%)">1%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Prince Edward Island</td>
+<td class="gt_row gt_right" headers="stub_1_2 Youth 18-29 (n)">21,450</td>
+<td class="gt_row gt_right" headers="stub_1_2 Youth 18-29 (%)">0%</td>
+<td class="gt_row gt_right" headers="stub_1_2 All Ages (n)">150,482</td>
+<td class="gt_row gt_right" headers="stub_1_2 All Ages (%)">0%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Nova Scotia</td>
+<td class="gt_row gt_right" headers="stub_1_3 Youth 18-29 (n)">137,986</td>
+<td class="gt_row gt_right" headers="stub_1_3 Youth 18-29 (%)">3%</td>
+<td class="gt_row gt_right" headers="stub_1_3 All Ages (n)">955,820</td>
+<td class="gt_row gt_right" headers="stub_1_3 All Ages (%)">3%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">New Brunswick</td>
+<td class="gt_row gt_right" headers="stub_1_4 Youth 18-29 (n)">96,491</td>
+<td class="gt_row gt_right" headers="stub_1_4 Youth 18-29 (%)">2%</td>
+<td class="gt_row gt_right" headers="stub_1_4 All Ages (n)">759,158</td>
+<td class="gt_row gt_right" headers="stub_1_4 All Ages (%)">2%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Quebec</td>
+<td class="gt_row gt_right" headers="stub_1_5 Youth 18-29 (n)">1,141,846</td>
+<td class="gt_row gt_right" headers="stub_1_5 Youth 18-29 (%)">21%</td>
+<td class="gt_row gt_right" headers="stub_1_5 All Ages (n)">8,308,479</td>
+<td class="gt_row gt_right" headers="stub_1_5 All Ages (%)">23%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Ontario</td>
+<td class="gt_row gt_right" headers="stub_1_6 Youth 18-29 (n)">2,169,233</td>
+<td class="gt_row gt_right" headers="stub_1_6 Youth 18-29 (%)">41%</td>
+<td class="gt_row gt_right" headers="stub_1_6 All Ages (n)">14,031,754</td>
+<td class="gt_row gt_right" headers="stub_1_6 All Ages (%)">39%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Manitoba</td>
+<td class="gt_row gt_right" headers="stub_1_7 Youth 18-29 (n)">205,087</td>
+<td class="gt_row gt_right" headers="stub_1_7 Youth 18-29 (%)">4%</td>
+<td class="gt_row gt_right" headers="stub_1_7 All Ages (n)">1,307,187</td>
+<td class="gt_row gt_right" headers="stub_1_7 All Ages (%)">4%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Saskatchewan</td>
+<td class="gt_row gt_right" headers="stub_1_8 Youth 18-29 (n)">155,646</td>
+<td class="gt_row gt_right" headers="stub_1_8 Youth 18-29 (%)">3%</td>
+<td class="gt_row gt_right" headers="stub_1_8 All Ages (n)">1,103,275</td>
+<td class="gt_row gt_right" headers="stub_1_8 All Ages (%)">3%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Alberta</td>
+<td class="gt_row gt_right" headers="stub_1_9 Youth 18-29 (n)">611,346</td>
+<td class="gt_row gt_right" headers="stub_1_9 Youth 18-29 (%)">11%</td>
+<td class="gt_row gt_right" headers="stub_1_9 All Ages (n)">4,177,717</td>
+<td class="gt_row gt_right" headers="stub_1_9 All Ages (%)">11%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">British Columbia</td>
+<td class="gt_row gt_right" headers="stub_1_10 Youth 18-29 (n)">723,060</td>
+<td class="gt_row gt_right" headers="stub_1_10 Youth 18-29 (%)">14%</td>
+<td class="gt_row gt_right" headers="stub_1_10 All Ages (n)">4,915,941</td>
+<td class="gt_row gt_right" headers="stub_1_10 All Ages (%)">14%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Northern Canada</td>
+<td class="gt_row gt_right" headers="stub_1_11 Youth 18-29 (n)">16,885</td>
+<td class="gt_row gt_right" headers="stub_1_11 Youth 18-29 (%)">0%</td>
+<td class="gt_row gt_right" headers="stub_1_11 All Ages (n)">116,566</td>
+<td class="gt_row gt_right" headers="stub_1_11 All Ages (%)">0%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="youth-demographics" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="youth-demographics"><span class="header-section-number">1.3</span> Youth Demographics</h2>
+<ul>
+<li>Compared to other Canadians of working age, higher proportions of youth are:
+<ul>
+<li>Indigenous (6.1% vs 4.4%)</li>
+<li>Non-immigrants (75.2% vs 69.1%)</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>t_demos <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(IMMSTAT, Gender, ABOID), </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(AGEGRP), is_working_age_lgl, <span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span>  </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var, value) <span class="sc">|&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop_last"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">|&gt;</span> </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span> </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> is_youth_fct, <span class="at">values_from =</span> p) </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>t_demos <span class="sc">|&gt;</span> </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab) <span class="sc">|&gt;</span> </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(var)`</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<div id="ejmibtvdeq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ejmibtvdeq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ejmibtvdeq thead, #ejmibtvdeq tbody, #ejmibtvdeq tfoot, #ejmibtvdeq tr, #ejmibtvdeq td, #ejmibtvdeq th {
+  border-style: none;
+}
+
+#ejmibtvdeq p {
+  margin: 0;
+  padding: 0;
+}
+
+#ejmibtvdeq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ejmibtvdeq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ejmibtvdeq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ejmibtvdeq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ejmibtvdeq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ejmibtvdeq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ejmibtvdeq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ejmibtvdeq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ejmibtvdeq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ejmibtvdeq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ejmibtvdeq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ejmibtvdeq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ejmibtvdeq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ejmibtvdeq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ejmibtvdeq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejmibtvdeq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ejmibtvdeq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ejmibtvdeq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ejmibtvdeq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejmibtvdeq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ejmibtvdeq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejmibtvdeq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ejmibtvdeq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejmibtvdeq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ejmibtvdeq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ejmibtvdeq .gt_left {
+  text-align: left;
+}
+
+#ejmibtvdeq .gt_center {
+  text-align: center;
+}
+
+#ejmibtvdeq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ejmibtvdeq .gt_font_normal {
+  font-weight: normal;
+}
+
+#ejmibtvdeq .gt_font_bold {
+  font-weight: bold;
+}
+
+#ejmibtvdeq .gt_font_italic {
+  font-style: italic;
+}
+
+#ejmibtvdeq .gt_super {
+  font-size: 65%;
+}
+
+#ejmibtvdeq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ejmibtvdeq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ejmibtvdeq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ejmibtvdeq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ejmibtvdeq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ejmibtvdeq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ejmibtvdeq .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Youth (18-29)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Youth (18-29)</th>
+<th id="Not Youth (30-64)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Not Youth (30-64)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd gt_group_heading_row">
+<td colspan="3" id="Indigenous: Indigenous identity - Detailed" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Indigenous: Indigenous identity - Detailed</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">First Nations (North American Indian)</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_1 Youth (18-29)">4%</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_1 Not Youth (30-64)">2%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Métis</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_2 Youth (18-29)">2%</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_2 Not Youth (30-64)">2%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Inuk&nbsp;(Inuit)</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_3 Youth (18-29)">0%</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_3 Not Youth (30-64)">0%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Multiple Indigenous responses</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_4 Youth (18-29)">0%</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_4 Not Youth (30-64)">0%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Indigenous responses not included elsewhere</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_5 Youth (18-29)">0%</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_5 Not Youth (30-64)">0%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Non-Indigenous identity</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_6 Youth (18-29)">94%</td>
+<td class="gt_row gt_right" headers="Indigenous: Indigenous identity - Detailed stub_1_6 Not Youth (30-64)">96%</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td colspan="3" id="Gender of person (binary)" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Gender of person (binary)</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Woman+</td>
+<td class="gt_row gt_right" headers="Gender of person (binary) stub_1_7 Youth (18-29)">49%</td>
+<td class="gt_row gt_right" headers="Gender of person (binary) stub_1_7 Not Youth (30-64)">51%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Man+</td>
+<td class="gt_row gt_right" headers="Gender of person (binary) stub_1_8 Youth (18-29)">51%</td>
+<td class="gt_row gt_right" headers="Gender of person (binary) stub_1_8 Not Youth (30-64)">49%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="3" id="Immigration: Immigrant status" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Immigration: Immigrant status</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Non-immigrants</td>
+<td class="gt_row gt_right" headers="Immigration: Immigrant status stub_1_9 Youth (18-29)">75%</td>
+<td class="gt_row gt_right" headers="Immigration: Immigrant status stub_1_9 Not Youth (30-64)">69%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Immigrants</td>
+<td class="gt_row gt_right" headers="Immigration: Immigrant status stub_1_10 Youth (18-29)">16%</td>
+<td class="gt_row gt_right" headers="Immigration: Immigrant status stub_1_10 Not Youth (30-64)">29%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Non-permanent residents</td>
+<td class="gt_row gt_right" headers="Immigration: Immigrant status stub_1_11 Youth (18-29)">9%</td>
+<td class="gt_row gt_right" headers="Immigration: Immigrant status stub_1_11 Not Youth (30-64)">2%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="youth-education-and-labour-force-status" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="youth-education-and-labour-force-status"><span class="header-section-number">1.4</span> Youth Education and Labour Force Status</h2>
+<p>Compared to the working-age population aged 30 or older, youth are: - More likely to be unemployed (12% vs 7%) - More likely to be attending school (41% vs 5%), especially at the university level (22% vs 2%) - Less likely to be “NEET” (15% vs 25%)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>t_lfs <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(ATTSCH, HDGREE, lf_status, lf_status_neet), </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var, value) <span class="sc">|&gt;</span> </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop_last"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span> </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> is_youth_fct, <span class="at">values_from =</span> p) <span class="sc">|&gt;</span> </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels <span class="sc">|&gt;</span> </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(var <span class="sc">!=</span> <span class="st">"ATTSCH"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tibble</span>(</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">var =</span> <span class="fu">c</span>(<span class="st">"lf_status"</span>, <span class="st">"lf_status_neet"</span>, <span class="st">"ATTSCH"</span>),</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">lab =</span> <span class="fu">c</span>(<span class="st">"Labour Force Status"</span>, <span class="st">"Labour Force Status (NEET)"</span>, <span class="st">"Education: Ongoing Schooling"</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(var)`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>t_lfs <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="qmfftbqwos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qmfftbqwos table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qmfftbqwos thead, #qmfftbqwos tbody, #qmfftbqwos tfoot, #qmfftbqwos tr, #qmfftbqwos td, #qmfftbqwos th {
+  border-style: none;
+}
+
+#qmfftbqwos p {
+  margin: 0;
+  padding: 0;
+}
+
+#qmfftbqwos .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qmfftbqwos .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qmfftbqwos .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qmfftbqwos .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qmfftbqwos .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qmfftbqwos .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qmfftbqwos .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qmfftbqwos .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qmfftbqwos .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qmfftbqwos .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qmfftbqwos .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qmfftbqwos .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qmfftbqwos .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qmfftbqwos .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qmfftbqwos .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmfftbqwos .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qmfftbqwos .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qmfftbqwos .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qmfftbqwos .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmfftbqwos .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qmfftbqwos .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmfftbqwos .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qmfftbqwos .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmfftbqwos .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qmfftbqwos .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmfftbqwos .gt_left {
+  text-align: left;
+}
+
+#qmfftbqwos .gt_center {
+  text-align: center;
+}
+
+#qmfftbqwos .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qmfftbqwos .gt_font_normal {
+  font-weight: normal;
+}
+
+#qmfftbqwos .gt_font_bold {
+  font-weight: bold;
+}
+
+#qmfftbqwos .gt_font_italic {
+  font-style: italic;
+}
+
+#qmfftbqwos .gt_super {
+  font-size: 65%;
+}
+
+#qmfftbqwos .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qmfftbqwos .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qmfftbqwos .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qmfftbqwos .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qmfftbqwos .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qmfftbqwos .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qmfftbqwos .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Youth (18-29)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Youth (18-29)</th>
+<th id="Not Youth (30-64)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Not Youth (30-64)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd gt_group_heading_row">
+<td colspan="3" id="Education: Ongoing Schooling" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Education: Ongoing Schooling</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Did not attend school</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_1 Youth (18-29)">59%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_1 Not Youth (30-64)">95%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Elementary or secondary school</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_2 Youth (18-29)">5%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_2 Not Youth (30-64)">0%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">College, CEGEP, trade school or other non-university institution</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_3 Youth (18-29)">14%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_3 Not Youth (30-64)">2%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">University</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_4 Youth (18-29)">22%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_4 Not Youth (30-64)">2%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Multiple responses</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_5 Youth (18-29)">0%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_5 Not Youth (30-64)">0%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="3" id="Education: Highest certificate, diploma or degree" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Education: Highest certificate, diploma or degree</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">No certificate, diploma or degree</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_6 Youth (18-29)">9%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_6 Not Youth (30-64)">10%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">High (secondary) school diploma or equivalency certificate</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_7 Youth (18-29)">40%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_7 Not Youth (30-64)">23%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Non-apprenticeship trades certificate or diploma</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_8 Youth (18-29)">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_8 Not Youth (30-64)">6%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Apprenticeship certificate</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_9 Youth (18-29)">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_9 Not Youth (30-64)">4%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Program of 3 months to less than 1 year (College, CEGEP and other non-university certificates or diplomas)</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_10 Youth (18-29)">2%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_10 Not Youth (30-64)">4%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Program of 1 to 2 years (College, CEGEP and other non-university certificates or diplomas)</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_11 Youth (18-29)">9%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_11 Not Youth (30-64)">10%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Program of more than 2 years (College, CEGEP and other non-university certificates or diplomas)</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_12 Youth (18-29)">6%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_12 Not Youth (30-64)">8%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">University certificate or diploma below bachelor level</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_13 Youth (18-29)">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_13 Not Youth (30-64)">3%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Bachelor's degree</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_14 Youth (18-29)">20%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_14 Not Youth (30-64)">20%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">University certificate or diploma above bachelor level</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_15 Youth (18-29)">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_15 Not Youth (30-64)">2%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Degree in medicine, dentistry, veterinary medicine or optometry</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_16 Youth (18-29)">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_16 Not Youth (30-64)">1%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Master's degree</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_17 Youth (18-29)">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_17 Not Youth (30-64)">7%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Earned doctorate</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_18 Youth (18-29)">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_18 Not Youth (30-64)">1%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="3" id="Labour Force Status" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Labour Force Status</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_19" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Employed</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_19 Youth (18-29)">66%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_19 Not Youth (30-64)">73%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Unemployed</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_20 Youth (18-29)">12%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_20 Not Youth (30-64)">7%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_21" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Not in the labour force</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_21 Youth (18-29)">22%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_21 Not Youth (30-64)">20%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="3" id="Labour Force Status (NEET)" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Labour Force Status (NEET)</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_22" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Employed</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_22 Youth (18-29)">66%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_22 Not Youth (30-64)">73%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_23" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Unemployed</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_23 Youth (18-29)">6%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_23 Not Youth (30-64)">0%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_24" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Not in the labour force</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_24 Youth (18-29)">13%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_24 Not Youth (30-64)">1%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_25" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Not in Employment, Education, or Training (NEET)</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_25 Youth (18-29)">15%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_25 Not Youth (30-64)">25%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<section id="key-finding-the-canadian-labour-force-is-growing-more-educated" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="key-finding-the-canadian-labour-force-is-growing-more-educated"><span class="header-section-number">1.4.1</span> Key Finding: The Canadian Labour Force is Growing More Educated</h3>
+<p>We observe a smaller proportion of youth who have attained a university degree (24%) compared to non-youth of working age (31%), but the much higher proportion of working-age youth in university suggests that this gap will invert in the future. If, as it seems, the Canadian labour force is growing more educated over time, the high-skill job market will become more competitive for labour market entrants, especially those without a university degree.</p>
+</section>
+<section id="key-finding-the-neet-youth-population-is-too-large-to-ignore" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="key-finding-the-neet-youth-population-is-too-large-to-ignore"><span class="header-section-number">1.4.2</span> Key Finding: The NEET Youth Population is Too Large to Ignore</h3>
+<p>Of the working-age youth who are not employed, most are in school. A quarter of the 30+ working-age population is NEET, as compared to 15% of working-age youth. In absolute terms, however, the number of NEET youth is still substantial (809,115).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_youth_lgl, <span class="sc">!</span><span class="fu">is.na</span>(lf_status_neet)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lf_status_neet) <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">sum</span>(WEIGHT)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="st">"n"</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="bdwgerwwvw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bdwgerwwvw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bdwgerwwvw thead, #bdwgerwwvw tbody, #bdwgerwwvw tfoot, #bdwgerwwvw tr, #bdwgerwwvw td, #bdwgerwwvw th {
+  border-style: none;
+}
+
+#bdwgerwwvw p {
+  margin: 0;
+  padding: 0;
+}
+
+#bdwgerwwvw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bdwgerwwvw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bdwgerwwvw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bdwgerwwvw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bdwgerwwvw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bdwgerwwvw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bdwgerwwvw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bdwgerwwvw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bdwgerwwvw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bdwgerwwvw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bdwgerwwvw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bdwgerwwvw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bdwgerwwvw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bdwgerwwvw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bdwgerwwvw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdwgerwwvw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bdwgerwwvw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bdwgerwwvw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bdwgerwwvw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdwgerwwvw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bdwgerwwvw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdwgerwwvw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bdwgerwwvw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdwgerwwvw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bdwgerwwvw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bdwgerwwvw .gt_left {
+  text-align: left;
+}
+
+#bdwgerwwvw .gt_center {
+  text-align: center;
+}
+
+#bdwgerwwvw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bdwgerwwvw .gt_font_normal {
+  font-weight: normal;
+}
+
+#bdwgerwwvw .gt_font_bold {
+  font-weight: bold;
+}
+
+#bdwgerwwvw .gt_font_italic {
+  font-style: italic;
+}
+
+#bdwgerwwvw .gt_super {
+  font-size: 65%;
+}
+
+#bdwgerwwvw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bdwgerwwvw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bdwgerwwvw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bdwgerwwvw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bdwgerwwvw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bdwgerwwvw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bdwgerwwvw .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="lf_status_neet" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">lf_status_neet</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="lf_status_neet">Employed</td>
+<td class="gt_row gt_right" headers="n">3,518,601</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="lf_status_neet">Unemployed</td>
+<td class="gt_row gt_right" headers="n">325,216</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="lf_status_neet">Not in the labour force</td>
+<td class="gt_row gt_right" headers="n">682,119</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="lf_status_neet">Not in Employment, Education, or Training (NEET)</td>
+<td class="gt_row gt_right" headers="n">809,115</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

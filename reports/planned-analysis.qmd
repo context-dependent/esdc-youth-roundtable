@@ -6,24 +6,29 @@ library(censuspumf)
 library(tidyverse)
 library(gt)
 
-d <- censuspumf::records |> 
-  censuspumf::encode_labels() |> 
+d0 <- censuspumf::records |> 
+  censuspumf::encode_labels() 
+  
+d <- d0 |> 
   mutate(
     is_working_age_lgl = as.integer(AGEGRP) |> between(7, 16),
     is_youth_lgl = as.integer(AGEGRP) |> between(7, 9),
+    is_youth_fct = factor(is_youth_lgl * -1 + 2, labels = c("Youth (18-29)", "Not Youth (30-64)")),
+    lf_status = LFACT |> str_extract("Employed|Unemployed|Not in the labour force") |> fct_relevel("Employed", "Unemployed", "Not in the labour force"),
+    lf_status_neet = case_when(
+      lf_status %in% c("Unemployed", "Not in the labour force") & ATTSCH == "Did not attend school" ~ "Not in Employment, Education, or Training (NEET)",
+      TRUE ~ as.character(lf_status)
+    ) |> 
+    fct_relevel("Employed", "Unemployed", "Not in the labour force", "Not in Employment, Education, or Training (NEET)")
   )
 ```
 
+## Youth Representation in the Canadian Population
 
-## Youth Demographics
-
-- Youth are defined as individuals aged 18 to 29. We care about this group because they are old enough that most of them have a relationship to the labour market, but young enough that they are still in the process of forming their careers and lives. 
+- In this analysis, Youth are defined as individuals aged 18 to 29. We care about this group because they are old enough that most of them have a relationship to the labour market, but young enough that they are still in the process of forming their careers and lives. 
 - Youth, as defined, comprise roughly 15% of the Canadian population and 24% of the working-age population.
-- Compared to other Canadians of working age, higher proportions of youth are:
-  - Attending school (41.1% vs 4.5%)
-  - 
 
-```{r demographics}
+```{r youth-rep}
 t_rep_pop <- d |> 
   filter(!is.na(AGEGRP)) |> 
   group_by(AGEGRP, is_youth_lgl, is_working_age_lgl) |> 
@@ -34,24 +39,130 @@ t_rep_pop <- d |>
     cumulative_working_age = cumsum(rep_working_age * is_youth_lgl)
   )
 
-d |> 
-  glimpse()
+t_rep_pop |> 
+  gt() |> 
+  fmt_percent(columns = c(rep_pop:cumulative_working_age), decimals = 0)
+```
+
+## Youth Distribution Across Provinces
+
+The distribution of youth across provinces is very similar to the distribution of the general population.
+
+```{r youth-distribution}
+t_prov_youth <- d |> 
+  filter(!is.na(PR), is_youth_lgl) |> 
+  group_by(PR) |> 
+  summarize(n = sum(WEIGHT), .groups = "drop") |> 
+  mutate(`Youth 18-29 (%)` = n / sum(n)) |> 
+  rename(`Youth 18-29 (n)` = n)
+
+t_prov_all <- d |> 
+  filter(!is.na(PR)) |> 
+  group_by(PR) |> 
+  summarize(n = sum(WEIGHT), .groups = "drop") |>
+  mutate(`All Ages (%)` = n / sum(n)) |> 
+  rename(`All Ages (n)` = n)
+
+
+t_prov_youth |> 
+  left_join(t_prov_all, by = "PR") |> 
+  gt(rowname_col = "PR") |> 
+  fmt_number(columns = c(2, 4), decimals = 0) |> 
+  fmt_percent(columns = c(3, 5), decimals = 0)
+```
+
+## Youth Demographics
+
+- Compared to other Canadians of working age, higher proportions of youth are:
+  - Indigenous (6.1% vs 4.4%)
+  - Non-immigrants (75.2% vs 69.1%)
+
+```{r demographics}
 
 t_demos <- d |> 
   pivot_longer(
-    cols = c(IMMSTAT, Gender, ABOID, COW, HDGREE, LFACT, ATTSCH), 
-    names_to = "variable", values_to = "value"
+    cols = c(IMMSTAT, Gender, ABOID), 
+    names_to = "var", values_to = "value"
   ) |> 
-  filter(!is.na(AGEGRP), is_working_age_lgl, !is.na(value)) |> 
-  group_by(is_youth_lgl, variable, value) |>
+  filter(!is.na(AGEGRP), is_working_age_lgl, !is.na(value)) |>  
+  group_by(is_youth_fct, var, value) |>
   summarize(n = sum(WEIGHT), .groups = "drop_last") |> 
   mutate(
     p = n / sum(n)
   )  |> 
   select(-n) |> 
-  pivot_wider(names_from = is_youth_lgl, values_from = p) |> 
-  gt(groupname_col = "variable", rowname_col = "value") |> 
-  fmt_percent(columns = c(`FALSE`, `TRUE`), decimals = 1)
+  pivot_wider(names_from = is_youth_fct, values_from = p) 
 
-t_demos
+t_demos |> 
+  left_join(
+    censuspumf::var_labels
+  ) |> 
+  group_by(lab) |> 
+  select(-var) |> 
+  gt(groupname_col = "lab", rowname_col = "value") |> 
+  fmt_percent(columns = c(2, 3), decimals = 0)
+```
+
+
+## Youth Education and Labour Force Status
+
+Compared to the working-age population aged 30 or older, youth are:
+  - More likely to be unemployed (12% vs 7%)
+  - More likely to be attending school (41% vs 5%), especially at the university level (22% vs 2%)
+  - Less likely to be "NEET" (15% vs 25%)
+
+```{r lf-status}
+t_lfs <- d |> 
+  filter(is_working_age_lgl) |> 
+  pivot_longer(
+    cols = c(ATTSCH, HDGREE, lf_status, lf_status_neet), 
+    names_to = "var", values_to = "value"
+  ) |> 
+  filter(!is.na(value)) |> 
+  group_by(is_youth_fct, var, value) |> 
+  summarize(n = sum(WEIGHT), .groups = "drop_last") |>
+  mutate(
+    p = n / sum(n)
+  ) |> 
+  select(-n) |> 
+  pivot_wider(names_from = is_youth_fct, values_from = p) |> 
+  left_join(
+    censuspumf::var_labels |> 
+      filter(var != "ATTSCH") |> 
+      bind_rows(
+        tibble(
+          var = c("lf_status", "lf_status_neet", "ATTSCH"),
+          lab = c("Labour Force Status", "Labour Force Status (NEET)", "Education: Ongoing Schooling")
+        )
+      )
+  ) |> 
+  ungroup() |> 
+  group_by(lab)
+
+t_lfs |> 
+  select(-var) |> 
+  gt(groupname_col = "lab", rowname_col = "value") |> 
+  fmt_percent(columns = c(2, 3), decimals = 0)
+```
+
+### Key Finding: The Canadian Labour Force is Growing More Educated
+
+We observe a smaller proportion of youth who have attained a university degree (24%) compared to non-youth of working age (31%), but the much higher proportion of working-age youth in university suggests that this gap will invert in the future. 
+If, as it seems, the Canadian labour force is growing more educated over time, the high-skill job market will become more competitive for labour market entrants, especially those without a university degree.
+
+### Key Finding: The NEET Youth Population is Too Large to Ignore
+
+Of the working-age youth who are not employed, most are in school. 
+A quarter of the 30+ working-age population is NEET, as compared to 15% of working-age youth.
+In absolute terms, however, the number of NEET youth is still substantial (809,115). 
+
+```{r neetness}
+d |> 
+  filter(is_youth_lgl, !is.na(lf_status_neet)) |> 
+  group_by(lf_status_neet) |> 
+  summarize(
+    n = sum(WEIGHT)
+  ) |> 
+  gt() |> 
+  fmt_number(columns = "n", decimals = 0)
 ```
