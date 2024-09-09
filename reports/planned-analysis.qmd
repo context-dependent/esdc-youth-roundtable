@@ -21,6 +21,18 @@ d <- d0 |>
     ) |> 
     fct_relevel("Employed", "Unemployed", "Not in the labour force", "Not in Employment, Education, or Training (NEET)")
   )
+
+dl_button <- function(x, name) {
+  x |> 
+    downloadthis::download_this(
+      output_name = glue::glue("esdc-youth_{name}"), 
+      output_extension = ".csv", 
+      button_label = "Download data as CSV", 
+      button_type = "default", 
+      has_icon = TRUE, 
+      icon = "fa fa-save"
+    )
+}
 ```
 
 ## Youth Representation in the Canadian Population
@@ -42,6 +54,8 @@ t_rep_pop <- d |>
 t_rep_pop |> 
   gt() |> 
   fmt_percent(columns = c(rep_pop:cumulative_working_age), decimals = 0)
+
+dl_button(t_rep_pop, "rep")
 ```
 
 ## Youth Distribution Across Provinces
@@ -69,6 +83,8 @@ t_prov_youth |>
   gt(rowname_col = "PR") |> 
   fmt_number(columns = c(2, 4), decimals = 0) |> 
   fmt_percent(columns = c(3, 5), decimals = 0)
+
+dl_button(t_prov_youth, "prov")
 ```
 
 ## Youth Demographics
@@ -102,6 +118,8 @@ t_demos |>
   select(-var) |> 
   gt(groupname_col = "lab", rowname_col = "value") |> 
   fmt_percent(columns = c(2, 3), decimals = 0)
+
+dl_button(t_demos, "demos")
 ```
 
 
@@ -145,6 +163,9 @@ t_lfs |>
   select(-var) |> 
   gt(groupname_col = "lab", rowname_col = "value") |> 
   fmt_percent(columns = c(2, 3), decimals = 0)
+
+
+dl_button(t_lfs, "lfs")
 ```
 
 ### Employment Characteristics
@@ -179,6 +200,8 @@ t_work |>
   select(-var) |> 
   gt() |> 
   fmt_percent(columns = c(2, 3), decimals = 0)
+
+dl_button(t_work, "work")
 ```
 
 
@@ -207,6 +230,8 @@ t_income |>
   gt(groupname_col = "lab", rowname_col = "is_youth_fct") |> 
   fmt_number(columns = n, decimals = 0) |> 
   fmt_currency(columns = "mean", decimals = 0)
+
+dl_button(t_income, "income")
 ```
 
 ### Key Finding: The Canadian Labour Force is Growing More Educated
@@ -220,14 +245,18 @@ A quarter of the 30+ working-age population is NEET, as compared to 15% of worki
 In absolute terms, however, the number of NEET youth is still substantial (809,115). 
 
 ```{r neetness}
-d |> 
+t_neet <- d |> 
   filter(is_youth_lgl, !is.na(lf_status_neet)) |> 
   group_by(lf_status_neet) |> 
   summarize(
     n = sum(WEIGHT)
-  ) |> 
+  ) 
+  
+t_neet |> 
   gt() |> 
   fmt_number(columns = "n", decimals = 0)
+
+dl_button(t_neet, "neet")
 ```
 
 ## Poverty and Hardship
@@ -235,7 +264,7 @@ d |>
 According to all of the low-income measures provided in the Census PUMF, working-age youth are more likely than their older counterparts to be live in income poverty. According to the MBM poverty line (Canada's current official measure), 12% of working-age youth are in poverty, compared to 8% of the 30+ working-age population. In spite of this, working-age youth are no more likely to be in core housing need than their elders. Across both groups, the rate of core housing need is 7%. 
 
 ```{r poverty-etc}
-d_pov <- d |> 
+t_pov <- d |> 
   filter(is_working_age_lgl) |> 
   pivot_longer(
     cols = c(matches("LICO|LIM|LoMBM"), HCORENEED_IND), 
@@ -260,9 +289,11 @@ d_pov <- d |>
   ) |> 
   group_by(lab)
 
-d_pov |> 
+t_pov |> 
   select(-var) |> 
   gt(groupname_col = "lab", rowname_col = "value") |> 
   fmt_percent(columns = c(2, 3), decimals = 0)
+
+dl_button(t_pov, "poverty")
 ```
 
