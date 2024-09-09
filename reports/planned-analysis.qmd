@@ -1,4 +1,4 @@
-# Planned Analysis
+# Youth in the Canadian Labour Market
 
 
 ```{r data-and-packages}
@@ -74,14 +74,15 @@ t_prov_youth |>
 ## Youth Demographics
 
 - Compared to other Canadians of working age, higher proportions of youth are:
-  - Indigenous (6.1% vs 4.4%)
-  - Non-immigrants (75.2% vs 69.1%)
+  - Indigenous (6% vs 4%)
+  - Non-immigrants (75% vs 69%)
+  - Non-white (41% vs 31%), particularly South Asian (11% vs 7%) and Black (5% vs 3%)
 
 ```{r demographics}
 
 t_demos <- d |> 
   pivot_longer(
-    cols = c(IMMSTAT, Gender, ABOID), 
+    cols = c(IMMSTAT, Gender, ABOID, DPGRSUM), 
     names_to = "var", values_to = "value"
   ) |> 
   filter(!is.na(AGEGRP), is_working_age_lgl, !is.na(value)) |>  
@@ -137,6 +138,7 @@ t_lfs <- d |>
       )
   ) |> 
   ungroup() |> 
+  arrange(lab) |> 
   group_by(lab)
 
 t_lfs |> 
@@ -145,10 +147,71 @@ t_lfs |>
   fmt_percent(columns = c(2, 3), decimals = 0)
 ```
 
+### Employment Characteristics
+
+```{r job-features}
+t_work <- d |> 
+  filter(is_working_age_lgl) |> 
+  pivot_longer(
+    cols = c(FPTWK, PWDUR, MODE, POWST), 
+    names_to = "var", values_to = "value"
+  ) |> 
+  filter(!is.na(value)) |> 
+  group_by(is_youth_fct, var, value) |> 
+  summarize(n = sum(WEIGHT), .groups = "drop_last") |>
+  mutate(
+    p = n / sum(n)
+  ) |> 
+  select(-n) |> 
+  pivot_wider(names_from = is_youth_fct, values_from = p) |>
+  mutate(var = str_to_upper(var)) |> 
+  left_join(
+    censuspumf::var_labels, by = "var" 
+  ) |> 
+  ungroup() |> 
+  arrange(lab) |> 
+  group_by(lab)
+
+d |> 
+  select(where(~is.factor(.x) & any(str_detect(levels(.x), "\\$"))))
+
+t_work |> 
+  select(-var) |> 
+  gt() |> 
+  fmt_percent(columns = c(2, 3), decimals = 0)
+```
+
+
+### Income
+
+Average total income for working-age youth is roughly half of that for the 30+ working-age population. 
+
+```{r income}
+t_income <- d |> 
+  filter(is_working_age_lgl) |> 
+  pivot_longer(
+    cols = c(EmpIn, Invst, GTRfs, TotInc), 
+    names_to = "var", values_to = "value"
+  ) |> 
+  filter(!is.na(value)) |> 
+  group_by(is_youth_fct, var) |> 
+  summarize(n = sum(WEIGHT), mean = weighted.mean(value, WEIGHT), .groups = "drop") |> 
+  mutate(
+    var = str_to_upper(var)
+  ) |> 
+  left_join(var_labels) |> 
+  select(-var) |> 
+  group_by(lab)
+
+t_income |> 
+  gt(groupname_col = "lab", rowname_col = "is_youth_fct") |> 
+  fmt_number(columns = n, decimals = 0) |> 
+  fmt_currency(columns = "mean", decimals = 0)
+```
+
 ### Key Finding: The Canadian Labour Force is Growing More Educated
 
-We observe a smaller proportion of youth who have attained a university degree (24%) compared to non-youth of working age (31%), but the much higher proportion of working-age youth in university suggests that this gap will invert in the future. 
-If, as it seems, the Canadian labour force is growing more educated over time, the high-skill job market will become more competitive for labour market entrants, especially those without a university degree.
+We observe a smaller proportion of youth who have attained a university degree (24%) compared to non-youth of working age (31%), but the much higher proportion of working-age youth in university suggests that this gap may invert in the future. 
 
 ### Key Finding: The NEET Youth Population is Too Large to Ignore
 
@@ -166,3 +229,40 @@ d |>
   gt() |> 
   fmt_number(columns = "n", decimals = 0)
 ```
+
+## Poverty and Hardship
+
+According to all of the low-income measures provided in the Census PUMF, working-age youth are more likely than their older counterparts to be live in income poverty. According to the MBM poverty line (Canada's current official measure), 12% of working-age youth are in poverty, compared to 8% of the 30+ working-age population. In spite of this, working-age youth are no more likely to be in core housing need than their elders. Across both groups, the rate of core housing need is 7%. 
+
+```{r poverty-etc}
+d_pov <- d |> 
+  filter(is_working_age_lgl) |> 
+  pivot_longer(
+    cols = c(matches("LICO|LIM|LoMBM"), HCORENEED_IND), 
+    names_to = "var", values_to = "value"
+  ) |> 
+  mutate(
+    var = str_to_upper(var)
+  ) |> 
+  filter(!is.na(value)) |>
+  group_by(is_youth_fct, var, value) |>
+  summarize(
+    n = sum(WEIGHT), .groups = "drop_last"
+  ) |>
+  mutate(
+    p = n / sum(n)
+  ) |> 
+  select(-n) |> 
+  pivot_wider(names_from = is_youth_fct, values_from = p) |> 
+  ungroup() |> 
+  left_join(
+    censuspumf::var_labels
+  ) |> 
+  group_by(lab)
+
+d_pov |> 
+  select(-var) |> 
+  gt(groupname_col = "lab", rowname_col = "value") |> 
+  fmt_percent(columns = c(2, 3), decimals = 0)
+```
+

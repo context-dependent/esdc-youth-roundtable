@@ -4,8 +4,8 @@ project:
   execute-dir: project
 
 book:
-  title: "reports"
-  author: "Norah Jones"
+  title: "ESDC Roundtable Reports"
+  author: "Thomas McManus"
   date: "2024-08-29"
   chapters:
     - index.qmd
@@ -24,7 +24,8 @@ format:
     theme: 
       - cosmo
       - custom.scss
-  pdf:
-    documentclass: scrreprt
+    code-fold: true
+    code-summary: "Show code"
+
 
 
