@@ -173,8 +173,19 @@ dl_button(t_lfs, "lfs")
 ```{r intra-youth-lf-status}
 t_lfs_iy <- d |> 
   filter(as.integer(AGEGRP) %in% 7:10) |> 
+  mutate(
+    educ_num = as.integer(HDGREE),
+    educ_short = factor(
+      case_when(
+        educ_num == 1 ~ "No HS", 
+        educ_num %in% 2:8 ~ "HS+", 
+        educ_num > 8 ~ "Bachelor+"
+      ) |> 
+      fct_rev()
+    )
+  ) |> 
   pivot_longer(
-    cols = c(ATTSCH, HDGREE, lf_status, lf_status_neet), 
+    cols = c(ATTSCH, educ_short, HDGREE, lf_status, lf_status_neet), 
     names_to = "var", values_to = "value"
   ) |> 
   filter(!is.na(value)) |> 
@@ -190,8 +201,8 @@ t_lfs_iy <- d |>
       filter(var != "ATTSCH") |> 
       bind_rows(
         tibble(
-          var = c("lf_status", "lf_status_neet", "ATTSCH"),
-          lab = c("Labour Force Status", "Labour Force Status (NEET)", "Education: Ongoing Schooling")
+          var = c("educ_short", "lf_status", "lf_status_neet", "ATTSCH"),
+          lab = c("Education: Condensed", "Labour Force Status", "Labour Force Status (NEET)", "Education: Ongoing Schooling")
         )
       )
   ) |> 
@@ -205,7 +216,7 @@ t_lfs_iy |>
   fmt_percent(columns = c(2, 3, 4, 5), decimals = 0)
 
 
-dl_button(t_lfs, "lfs")
+dl_button(t_lfs_iy, "lfs-iy")
 ```
 
 ### Employment Characteristics
