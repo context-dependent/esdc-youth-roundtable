@@ -172,10 +172,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#youth-demographics" id="toc-youth-demographics" class="nav-link" data-scroll-target="#youth-demographics"><span class="header-section-number">1.3</span> Youth Demographics</a></li>
   <li><a href="#youth-education-and-labour-force-status" id="toc-youth-education-and-labour-force-status" class="nav-link" data-scroll-target="#youth-education-and-labour-force-status"><span class="header-section-number">1.4</span> Youth Education and Labour Force Status</a>
   <ul class="collapse">
-  <li><a href="#employment-characteristics" id="toc-employment-characteristics" class="nav-link" data-scroll-target="#employment-characteristics"><span class="header-section-number">1.4.1</span> Employment Characteristics</a></li>
-  <li><a href="#income" id="toc-income" class="nav-link" data-scroll-target="#income"><span class="header-section-number">1.4.2</span> Income</a></li>
-  <li><a href="#key-finding-the-canadian-labour-force-is-growing-more-educated" id="toc-key-finding-the-canadian-labour-force-is-growing-more-educated" class="nav-link" data-scroll-target="#key-finding-the-canadian-labour-force-is-growing-more-educated"><span class="header-section-number">1.4.3</span> Key Finding: The Canadian Labour Force is Growing More Educated</a></li>
-  <li><a href="#key-finding-the-neet-youth-population-is-too-large-to-ignore" id="toc-key-finding-the-neet-youth-population-is-too-large-to-ignore" class="nav-link" data-scroll-target="#key-finding-the-neet-youth-population-is-too-large-to-ignore"><span class="header-section-number">1.4.4</span> Key Finding: The NEET Youth Population is Too Large to Ignore</a></li>
+  <li><a href="#intra-youth-comparison-of-education-and-labour-force-status" id="toc-intra-youth-comparison-of-education-and-labour-force-status" class="nav-link" data-scroll-target="#intra-youth-comparison-of-education-and-labour-force-status"><span class="header-section-number">1.4.1</span> Intra-youth Comparison of Education and Labour Force Status</a></li>
+  <li><a href="#employment-characteristics" id="toc-employment-characteristics" class="nav-link" data-scroll-target="#employment-characteristics"><span class="header-section-number">1.4.2</span> Employment Characteristics</a></li>
+  <li><a href="#income" id="toc-income" class="nav-link" data-scroll-target="#income"><span class="header-section-number">1.4.3</span> Income</a></li>
+  <li><a href="#key-finding-the-canadian-labour-force-is-growing-more-educated" id="toc-key-finding-the-canadian-labour-force-is-growing-more-educated" class="nav-link" data-scroll-target="#key-finding-the-canadian-labour-force-is-growing-more-educated"><span class="header-section-number">1.4.4</span> Key Finding: The Canadian Labour Force is Growing More Educated</a></li>
+  <li><a href="#key-finding-the-neet-youth-population-is-too-large-to-ignore" id="toc-key-finding-the-neet-youth-population-is-too-large-to-ignore" class="nav-link" data-scroll-target="#key-finding-the-neet-youth-population-is-too-large-to-ignore"><span class="header-section-number">1.4.5</span> Key Finding: The NEET Youth Population is Too Large to Ignore</a></li>
   </ul></li>
   <li><a href="#poverty-and-hardship" id="toc-poverty-and-hardship" class="nav-link" data-scroll-target="#poverty-and-hardship"><span class="header-section-number">1.5</span> Poverty and Hardship</a></li>
   </ul>
@@ -2907,35 +2908,759 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   " has_icon="TRUE"><i class="fa fa-save"></i> Download data as CSV</button>
 </div>
 </div>
-<section id="employment-characteristics" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="employment-characteristics"><span class="header-section-number">1.4.1</span> Employment Characteristics</h3>
+<section id="intra-youth-comparison-of-education-and-labour-force-status" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="intra-youth-comparison-of-education-and-labour-force-status"><span class="header-section-number">1.4.1</span> Intra-youth Comparison of Education and Labour Force Status</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>t_work <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>t_lfs_iy <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.integer</span>(AGEGRP) <span class="sc">%in%</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(FPTWK, PWDUR, MODE, POWST), </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(ATTSCH, HDGREE, lf_status, lf_status_neet), </span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var, value) <span class="sc">|&gt;</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(AGEGRP, var, value) <span class="sc">|&gt;</span> </span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop_last"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span> </span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> is_youth_fct, <span class="at">values_from =</span> p) <span class="sc">|&gt;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var =</span> <span class="fu">str_to_upper</span>(var)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels, <span class="at">by =</span> <span class="st">"var"</span> </span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(lab) <span class="sc">|&gt;</span> </span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(<span class="sc">~</span><span class="fu">is.factor</span>(.x) <span class="sc">&amp;</span> <span class="fu">any</span>(<span class="fu">str_detect</span>(<span class="fu">levels</span>(.x), <span class="st">"</span><span class="sc">\\</span><span class="st">$"</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> AGEGRP, <span class="at">values_from =</span> p, <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels <span class="sc">|&gt;</span> </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(var <span class="sc">!=</span> <span class="st">"ATTSCH"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tibble</span>(</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">var =</span> <span class="fu">c</span>(<span class="st">"lf_status"</span>, <span class="st">"lf_status_neet"</span>, <span class="st">"ATTSCH"</span>),</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">lab =</span> <span class="fu">c</span>(<span class="st">"Labour Force Status"</span>, <span class="st">"Labour Force Status (NEET)"</span>, <span class="st">"Education: Ongoing Schooling"</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(lab) <span class="sc">|&gt;</span> </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(var)`</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>t_lfs_iy <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div id="emygmqgiov" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#emygmqgiov table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#emygmqgiov thead, #emygmqgiov tbody, #emygmqgiov tfoot, #emygmqgiov tr, #emygmqgiov td, #emygmqgiov th {
+  border-style: none;
+}
+
+#emygmqgiov p {
+  margin: 0;
+  padding: 0;
+}
+
+#emygmqgiov .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#emygmqgiov .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#emygmqgiov .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#emygmqgiov .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#emygmqgiov .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#emygmqgiov .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#emygmqgiov .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#emygmqgiov .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#emygmqgiov .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#emygmqgiov .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#emygmqgiov .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#emygmqgiov .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#emygmqgiov .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#emygmqgiov .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#emygmqgiov .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#emygmqgiov .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#emygmqgiov .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#emygmqgiov .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#emygmqgiov .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#emygmqgiov .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#emygmqgiov .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#emygmqgiov .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#emygmqgiov .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#emygmqgiov .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#emygmqgiov .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#emygmqgiov .gt_left {
+  text-align: left;
+}
+
+#emygmqgiov .gt_center {
+  text-align: center;
+}
+
+#emygmqgiov .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#emygmqgiov .gt_font_normal {
+  font-weight: normal;
+}
+
+#emygmqgiov .gt_font_bold {
+  font-weight: bold;
+}
+
+#emygmqgiov .gt_font_italic {
+  font-style: italic;
+}
+
+#emygmqgiov .gt_super {
+  font-size: 65%;
+}
+
+#emygmqgiov .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#emygmqgiov .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#emygmqgiov .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#emygmqgiov .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#emygmqgiov .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#emygmqgiov .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#emygmqgiov .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="18 to 19 years" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">18 to 19 years</th>
+<th id="20 to 24 years" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">20 to 24 years</th>
+<th id="25 to 29 years" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">25 to 29 years</th>
+<th id="30 to 34 years" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">30 to 34 years</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd gt_group_heading_row">
+<td colspan="5" id="Education: Highest certificate, diploma or degree" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Education: Highest certificate, diploma or degree</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">No certificate, diploma or degree</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_1 18 to 19 years">20%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_1 20 to 24 years">8%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_1 25 to 29 years">7%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_1 30 to 34 years">7%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">High (secondary) school diploma or equivalency certificate</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_2 18 to 19 years">73%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_2 20 to 24 years">47%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_2 25 to 29 years">23%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_2 30 to 34 years">20%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Non-apprenticeship trades certificate or diploma</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_3 18 to 19 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_3 20 to 24 years">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_3 25 to 29 years">4%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_3 30 to 34 years">5%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Apprenticeship certificate</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_4 18 to 19 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_4 20 to 24 years">2%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_4 25 to 29 years">4%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_4 30 to 34 years">5%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Program of 3 months to less than 1 year (College, CEGEP and other non-university certificates or diplomas)</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_5 18 to 19 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_5 20 to 24 years">2%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_5 25 to 29 years">2%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_5 30 to 34 years">3%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Program of 1 to 2 years (College, CEGEP and other non-university certificates or diplomas)</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_6 18 to 19 years">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_6 20 to 24 years">11%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_6 25 to 29 years">10%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_6 30 to 34 years">10%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Program of more than 2 years (College, CEGEP and other non-university certificates or diplomas)</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_7 18 to 19 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_7 20 to 24 years">7%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_7 25 to 29 years">7%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_7 30 to 34 years">7%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">University certificate or diploma below bachelor level</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_8 18 to 19 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_8 20 to 24 years">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_8 25 to 29 years">3%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_8 30 to 34 years">3%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Bachelor's degree</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_9 18 to 19 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_9 20 to 24 years">17%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_9 25 to 29 years">29%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_9 30 to 34 years">26%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">University certificate or diploma above bachelor level</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_10 18 to 19 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_10 20 to 24 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_10 25 to 29 years">2%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_10 30 to 34 years">2%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Degree in medicine, dentistry, veterinary medicine or optometry</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_11 18 to 19 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_11 20 to 24 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_11 25 to 29 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_11 30 to 34 years">1%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Master's degree</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_12 18 to 19 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_12 20 to 24 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_12 25 to 29 years">7%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_12 30 to 34 years">10%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Earned doctorate</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_13 18 to 19 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_13 20 to 24 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_13 25 to 29 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Highest certificate, diploma or degree stub_1_13 30 to 34 years">1%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="5" id="Education: Ongoing Schooling" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Education: Ongoing Schooling</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Did not attend school</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_14 18 to 19 years">23%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_14 20 to 24 years">48%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_14 25 to 29 years">81%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_14 30 to 34 years">90%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Elementary or secondary school</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_15 18 to 19 years">26%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_15 20 to 24 years">2%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_15 25 to 29 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_15 30 to 34 years">0%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">College, CEGEP, trade school or other non-university institution</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_16 18 to 19 years">24%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_16 20 to 24 years">17%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_16 25 to 29 years">8%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_16 30 to 34 years">5%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">University</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_17 18 to 19 years">26%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_17 20 to 24 years">32%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_17 25 to 29 years">11%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_17 30 to 34 years">5%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Multiple responses</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_18 18 to 19 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_18 20 to 24 years">1%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_18 25 to 29 years">0%</td>
+<td class="gt_row gt_right" headers="Education: Ongoing Schooling stub_1_18 30 to 34 years">0%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="5" id="Labour Force Status" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Labour Force Status</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_19" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Employed</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_19 18 to 19 years">49%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_19 20 to 24 years">62%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_19 25 to 29 years">76%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_19 30 to 34 years">78%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_20" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Unemployed</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_20 18 to 19 years">14%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_20 20 to 24 years">15%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_20 25 to 29 years">9%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_20 30 to 34 years">8%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_21" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Not in the labour force</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_21 18 to 19 years">37%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_21 20 to 24 years">24%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_21 25 to 29 years">15%</td>
+<td class="gt_row gt_right" headers="Labour Force Status stub_1_21 30 to 34 years">14%</td>
+</tr>
+<tr class="odd gt_group_heading_row">
+<td colspan="5" id="Labour Force Status (NEET)" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Labour Force Status (NEET)</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_22" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Employed</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_22 18 to 19 years">49%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_22 20 to 24 years">62%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_22 25 to 29 years">76%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_22 30 to 34 years">78%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_23" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Unemployed</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_23 18 to 19 years">11%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_23 20 to 24 years">9%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_23 25 to 29 years">2%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_23 30 to 34 years">1%</td>
+</tr>
+<tr class="even">
+<td id="stub_1_24" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Not in the labour force</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_24 18 to 19 years">31%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_24 20 to 24 years">15%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_24 25 to 29 years">5%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_24 30 to 34 years">2%</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_25" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Not in Employment, Education, or Training (NEET)</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_25 18 to 19 years">10%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_25 20 to 24 years">14%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_25 25 to 29 years">17%</td>
+<td class="gt_row gt_right" headers="Labour Force Status (NEET) stub_1_25 30 to 34 years">19%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_lfs, <span class="st">"lfs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<button class="btn btn-default" onclick="
+    async function downloadFile(event) {
+      event.preventDefault();
+      try {
+        const response = await fetch('data:text/csv;base64,dmFyO3ZhbHVlO1lvdXRoICgxOC0yOSk7Tm90IFlvdXRoICgzMC02NCk7bGFiCkhER1JFRTtObyBjZXJ0aWZpY2F0ZSwgZGlwbG9tYSBvciBkZWdyZWU7MCwwOTExMjczNzk0OTM2NzExMTswLDEwMjc5NDA3MDMwNzkwMDI3NjtFZHVjYXRpb246IEhpZ2hlc3QgY2VydGlmaWNhdGUsIGRpcGxvbWEgb3IgZGVncmVlCkhER1JFRTtIaWdoIChzZWNvbmRhcnkpIHNjaG9vbCBkaXBsb21hIG9yIGVxdWl2YWxlbmN5IGNlcnRpZmljYXRlOzAsMzk5MDQxMjc2ODI2MTA2NTI7MCwyMzA5MTIyNzE2NTgwMzQ2Mjk7RWR1Y2F0aW9uOiBIaWdoZXN0IGNlcnRpZmljYXRlLCBkaXBsb21hIG9yIGRlZ3JlZQpIREdSRUU7Tm9uLWFwcHJlbnRpY2VzaGlwIHRyYWRlcyBjZXJ0aWZpY2F0ZSBvciBkaXBsb21hOzAsMDM0MjA1MTYwMDE4MTg4NDM7MCwwNTUxNTk1MTcxNTIzOTg3NDU7RWR1Y2F0aW9uOiBIaWdoZXN0IGNlcnRpZmljYXRlLCBkaXBsb21hIG9yIGRlZ3JlZQpIREdSRUU7IEFwcHJlbnRpY2VzaGlwIGNlcnRpZmljYXRlOzAsMDI1Mzg4ODM4OTI3MDU4OTI7MCwwNDM4NjQxMjk1MDYyNTYxMTU7RWR1Y2F0aW9uOiBIaWdoZXN0IGNlcnRpZmljYXRlLCBkaXBsb21hIG9yIGRlZ3JlZQpIREdSRUU7UHJvZ3JhbSBvZiAzIG1vbnRocyB0byBsZXNzIHRoYW4gMSB5ZWFyIChDb2xsZWdlLCBDRUdFUCBhbmQgb3RoZXIgbm9uLXVuaXZlcnNpdHkgY2VydGlmaWNhdGVzIG9yIGRpcGxvbWFzKTswLDAxOTYwOTQ3OTA1OTMxMTI1OzAsMDM1MTkxNTEyODAyMTA0MDU4O0VkdWNhdGlvbjogSGlnaGVzdCBjZXJ0aWZpY2F0ZSwgZGlwbG9tYSBvciBkZWdyZWUKSERHUkVFO1Byb2dyYW0gb2YgMSB0byAyIHllYXJzIChDb2xsZWdlLCBDRUdFUCBhbmQgb3RoZXIgbm9uLXVuaXZlcnNpdHkgY2VydGlmaWNhdGVzIG9yIGRpcGxvbWFzKTswLDA5MjA3Mzc5MjEwNzI3NjIzOzAsMTAyMTAwNDI1NjAyNjE4MjgzO0VkdWNhdGlvbjogSGlnaGVzdCBjZXJ0aWZpY2F0ZSwgZGlwbG9tYSBvciBkZWdyZWUKSERHUkVFO1Byb2dyYW0gb2YgbW9yZSB0aGFuIDIgeWVhcnMgKENvbGxlZ2UsIENFR0VQIGFuZCBvdGhlciBub24tdW5pdmVyc2l0eSBjZXJ0aWZpY2F0ZXMgb3IgZGlwbG9tYXMpOzAsMDYxOTgxOTU2NjUwMjU1NjQ7MCwwODA0OTM0Nzc1NDAxNjg4NjI7RWR1Y2F0aW9uOiBIaWdoZXN0IGNlcnRpZmljYXRlLCBkaXBsb21hIG9yIGRlZ3JlZQpIREdSRUU7VW5pdmVyc2l0eSBjZXJ0aWZpY2F0ZSBvciBkaXBsb21hIGJlbG93IGJhY2hlbG9yIGxldmVsOzAsMDI1MDI1ODAxNzgyNDY4NDY7MCwwMzI2MzI0MjcwNzUzMTAwMzU7RWR1Y2F0aW9uOiBIaWdoZXN0IGNlcnRpZmljYXRlLCBkaXBsb21hIG9yIGRlZ3JlZQpIREdSRUU7QmFjaGVsb3IncyBkZWdyZWU7MCwyMDAzOTEyODIxNzExNTMzNTswLDIwMzQ3NDM3Nzg3MTc3NDQ3MDtFZHVjYXRpb246IEhpZ2hlc3QgY2VydGlmaWNhdGUsIGRpcGxvbWEgb3IgZGVncmVlCkhER1JFRTtVbml2ZXJzaXR5IGNlcnRpZmljYXRlIG9yIGRpcGxvbWEgYWJvdmUgYmFjaGVsb3IgbGV2ZWw7MCwwMTE4NjY2NDI3MjM1MDI2ODswLDAyMDkxMTgwOTUxNDU2MDIzMTtFZHVjYXRpb246IEhpZ2hlc3QgY2VydGlmaWNhdGUsIGRpcGxvbWEgb3IgZGVncmVlCkhER1JFRTtEZWdyZWUgaW4gbWVkaWNpbmUsIGRlbnRpc3RyeSwgdmV0ZXJpbmFyeSBtZWRpY2luZSBvciBvcHRvbWV0cnk7MCwwMDM3NzkxNDc1MTkxMTYxNDswLDAwNzcyMTUxNDIyNzMwMzY5MDtFZHVjYXRpb246IEhpZ2hlc3QgY2VydGlmaWNhdGUsIGRpcGxvbWEgb3IgZGVncmVlCkhER1JFRTtNYXN0ZXIncyBkZWdyZWU7MCwwMzQ0MzA0MTM1ODUxOTM3OTswLDA3NDA1NTUyMDY2MDM2MDk2MDtFZHVjYXRpb246IEhpZ2hlc3QgY2VydGlmaWNhdGUsIGRpcGxvbWEgb3IgZGVncmVlCkhER1JFRTtFYXJuZWQgZG9jdG9yYXRlOzAsMDAxMDc4ODI5MTM2Njk3NDU7MCwwMTA2ODg5NDYwODEyMDk2MDM7RWR1Y2F0aW9uOiBIaWdoZXN0IGNlcnRpZmljYXRlLCBkaXBsb21hIG9yIGRlZ3JlZQpBVFRTQ0g7RGlkIG5vdCBhdHRlbmQgc2Nob29sOzAsNTg5MDA1MzU4MTM2MjU5MDk7MCw5NTQ2OTE1NTI1NjQ2OTk2MTk7RWR1Y2F0aW9uOiBPbmdvaW5nIFNjaG9vbGluZwpBVFRTQ0g7RWxlbWVudGFyeSBvciBzZWNvbmRhcnkgc2Nob29sOzAsMDQ3NjA4NzQwMDYxMDAzMDA7MCwwMDE5OTk5NjYyNjUzMDIzNDQ7RWR1Y2F0aW9uOiBPbmdvaW5nIFNjaG9vbGluZwpBVFRTQ0g7Q29sbGVnZSwgQ0VHRVAsIHRyYWRlIHNjaG9vbCBvciBvdGhlciBub24tdW5pdmVyc2l0eSBpbnN0aXR1dGlvbjswLDE0MjA2NTI0NTM2MzY5MjI4OzAsMDIyNjA5MTU0NzI1OTY5MjMyO0VkdWNhdGlvbjogT25nb2luZyBTY2hvb2xpbmcKQVRUU0NIO1VuaXZlcnNpdHk7MCwyMTY5Nzc2MzYwNjIyNTU4MTswLDAyMDA5MTk3MDgwMzU2NTY1MjtFZHVjYXRpb246IE9uZ29pbmcgU2Nob29saW5nCkFUVFNDSDtNdWx0aXBsZSByZXNwb25zZXM7MCwwMDQzNDMwMjAzNzY3ODk3MjswLDAwMDYwNzM1NTY0MDQ2MzA3NjtFZHVjYXRpb246IE9uZ29pbmcgU2Nob29saW5nCmxmX3N0YXR1cztFbXBsb3llZDswLDY1OTUyNTIzMDQyNTE0NDg4OzAsNzMyODYyOTQ0NDAwMzE4ODUwO0xhYm91ciBGb3JjZSBTdGF0dXMKbGZfc3RhdHVzO1VuZW1wbG95ZWQ7MCwxMjE2NzE5NzQxMTIwMTEwMTswLDA2NjY5NzgyNDU5NjE2MzM4NTtMYWJvdXIgRm9yY2UgU3RhdHVzCmxmX3N0YXR1cztOb3QgaW4gdGhlIGxhYm91ciBmb3JjZTswLDIxODgwMjc5NTQ2Mjg0NDA5OzAsMjAwNDM5MjMxMDAzNTE3NzA5O0xhYm91ciBGb3JjZSBTdGF0dXMKbGZfc3RhdHVzX25lZXQ7RW1wbG95ZWQ7MCw2NTk1MjUyMzA0MjUxNDQ5OTswLDczMjg2Mjk0NDQwMDMxODk2MTtMYWJvdXIgRm9yY2UgU3RhdHVzIChORUVUKQpsZl9zdGF0dXNfbmVldDtVbmVtcGxveWVkOzAsMDYwOTU4NDE3NDE5ODU0NTQ7MCwwMDQzOTIxNjY0MjM3NDUxOTQ7TGFib3VyIEZvcmNlIFN0YXR1cyAoTkVFVCkKbGZfc3RhdHVzX25lZXQ7Tm90IGluIHRoZSBsYWJvdXIgZm9yY2U7MCwxMjc4NTYxNDIyOTI2Nzc1MDswLDAwOTcwODI4MDEyODE0NTUwNjtMYWJvdXIgRm9yY2UgU3RhdHVzIChORUVUKQpsZl9zdGF0dXNfbmVldDtOb3QgaW4gRW1wbG95bWVudCwgRWR1Y2F0aW9uLCBvciBUcmFpbmluZyAoTkVFVCk7MCwxNTE2NjAyMDk4NjIzMjMwNjswLDI1MzAzNjYwOTA0Nzc5MDQwNjtMYWJvdXIgRm9yY2UgU3RhdHVzIChORUVUKQo=');
+        if (!response.ok) throw new Error('Network response failed');
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = 'esdc-youth_lfs.csv';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.dispatchEvent(new MouseEvent('click'));
+        document.body.removeChild(a);
+        setTimeout(() => {
+          window.URL.revokeObjectURL(blobUrl);
+        }, 100);
+        return false;
+      } catch (error) {
+        console.error('Download failed:', error);
+        alert('Download failed. Please try again.');
+      }
+    }
+    downloadFile(event);
+  " has_icon="TRUE"><i class="fa fa-save"></i> Download data as CSV</button>
+</div>
+</div>
+</section>
+<section id="employment-characteristics" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="employment-characteristics"><span class="header-section-number">1.4.2</span> Employment Characteristics</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>t_work <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(FPTWK, PWDUR, MODE, POWST), </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var, value) <span class="sc">|&gt;</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop_last"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span> </span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> is_youth_fct, <span class="at">values_from =</span> p) <span class="sc">|&gt;</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">var =</span> <span class="fu">str_to_upper</span>(var)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels, <span class="at">by =</span> <span class="st">"var"</span> </span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(lab) <span class="sc">|&gt;</span> </span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(<span class="sc">~</span><span class="fu">is.factor</span>(.x) <span class="sc">&amp;</span> <span class="fu">any</span>(<span class="fu">str_detect</span>(<span class="fu">levels</span>(.x), <span class="st">"</span><span class="sc">\\</span><span class="st">$"</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 980,868 × 8
@@ -2955,10 +3680,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>t_work <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>t_work <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -3537,7 +4262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_work, <span class="st">"work"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_work, <span class="st">"work"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <button class="btn btn-default" onclick="
@@ -3569,37 +4294,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="income" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="income"><span class="header-section-number">1.4.2</span> Income</h3>
+<section id="income" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="income"><span class="header-section-number">1.4.3</span> Income</h3>
 <p>Average total income for working-age youth is roughly half of that for the 30+ working-age population.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>t_income <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(EmpIn, Invst, GTRfs, TotInc), </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span> </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var) <span class="sc">|&gt;</span> </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">mean =</span> <span class="fu">weighted.mean</span>(value, WEIGHT), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">var =</span> <span class="fu">str_to_upper</span>(var)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(var_labels) <span class="sc">|&gt;</span> </span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>t_income <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(EmpIn, Invst, GTRfs, TotInc), </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span> </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var) <span class="sc">|&gt;</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">mean =</span> <span class="fu">weighted.mean</span>(value, WEIGHT), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">var =</span> <span class="fu">str_to_upper</span>(var)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(var_labels) <span class="sc">|&gt;</span> </span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(var)`</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>t_income <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"is_youth_fct"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> n, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_currency</span>(<span class="at">columns =</span> <span class="st">"mean"</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>t_income <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"is_youth_fct"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> n, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_currency</span>(<span class="at">columns =</span> <span class="st">"mean"</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4113,7 +4838,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_income, <span class="st">"income"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_income, <span class="st">"income"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <button class="btn btn-default" onclick="
@@ -4145,26 +4870,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="key-finding-the-canadian-labour-force-is-growing-more-educated" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="key-finding-the-canadian-labour-force-is-growing-more-educated"><span class="header-section-number">1.4.3</span> Key Finding: The Canadian Labour Force is Growing More Educated</h3>
+<section id="key-finding-the-canadian-labour-force-is-growing-more-educated" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="key-finding-the-canadian-labour-force-is-growing-more-educated"><span class="header-section-number">1.4.4</span> Key Finding: The Canadian Labour Force is Growing More Educated</h3>
 <p>We observe a smaller proportion of youth who have attained a university degree (24%) compared to non-youth of working age (31%), but the much higher proportion of working-age youth in university suggests that this gap may invert in the future.</p>
 </section>
-<section id="key-finding-the-neet-youth-population-is-too-large-to-ignore" class="level3" data-number="1.4.4">
-<h3 data-number="1.4.4" class="anchored" data-anchor-id="key-finding-the-neet-youth-population-is-too-large-to-ignore"><span class="header-section-number">1.4.4</span> Key Finding: The NEET Youth Population is Too Large to Ignore</h3>
+<section id="key-finding-the-neet-youth-population-is-too-large-to-ignore" class="level3" data-number="1.4.5">
+<h3 data-number="1.4.5" class="anchored" data-anchor-id="key-finding-the-neet-youth-population-is-too-large-to-ignore"><span class="header-section-number">1.4.5</span> Key Finding: The NEET Youth Population is Too Large to Ignore</h3>
 <p>Of the working-age youth who are not employed, most are in school. A quarter of the 30+ working-age population is NEET, as compared to 15% of working-age youth. In absolute terms, however, the number of NEET youth is still substantial (809,115).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>t_neet <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_youth_lgl, <span class="sc">!</span><span class="fu">is.na</span>(lf_status_neet)) <span class="sc">|&gt;</span> </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lf_status_neet) <span class="sc">|&gt;</span> </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">sum</span>(WEIGHT)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>t_neet <span class="sc">|&gt;</span> </span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="st">"n"</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>t_neet <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_youth_lgl, <span class="sc">!</span><span class="fu">is.na</span>(lf_status_neet)) <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lf_status_neet) <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">sum</span>(WEIGHT)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>t_neet <span class="sc">|&gt;</span> </span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="st">"n"</span>, <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4641,7 +5366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_neet, <span class="st">"neet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_neet, <span class="st">"neet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <button class="btn btn-default" onclick="
@@ -4680,40 +5405,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>t_pov <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="fu">matches</span>(<span class="st">"LICO|LIM|LoMBM"</span>), HCORENEED_IND), </span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">var =</span> <span class="fu">str_to_upper</span>(var)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var, value) <span class="sc">|&gt;</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop_last"</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span> </span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> is_youth_fct, <span class="at">values_from =</span> p) <span class="sc">|&gt;</span> </span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>t_pov <span class="ot">&lt;-</span> d <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_working_age_lgl) <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="fu">matches</span>(<span class="st">"LICO|LIM|LoMBM"</span>), HCORENEED_IND), </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"var"</span>, <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">var =</span> <span class="fu">str_to_upper</span>(var)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">|&gt;</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(is_youth_fct, var, value) <span class="sc">|&gt;</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">sum</span>(WEIGHT), <span class="at">.groups =</span> <span class="st">"drop_last"</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span> </span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> is_youth_fct, <span class="at">values_from =</span> p) <span class="sc">|&gt;</span> </span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    censuspumf<span class="sc">::</span>var_labels</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(var)`</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>t_pov <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>t_pov <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>var) <span class="sc">|&gt;</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"lab"</span>, <span class="at">rowname_col =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">decimals =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5253,7 +5978,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_pov, <span class="st">"poverty"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dl_button</span>(t_pov, <span class="st">"poverty"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <button class="btn btn-default" onclick="

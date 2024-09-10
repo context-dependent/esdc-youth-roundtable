@@ -168,6 +168,46 @@ t_lfs |>
 dl_button(t_lfs, "lfs")
 ```
 
+### Intra-youth Comparison of Education and Labour Force Status
+
+```{r intra-youth-lf-status}
+t_lfs_iy <- d |> 
+  filter(as.integer(AGEGRP) %in% 7:10) |> 
+  pivot_longer(
+    cols = c(ATTSCH, HDGREE, lf_status, lf_status_neet), 
+    names_to = "var", values_to = "value"
+  ) |> 
+  filter(!is.na(value)) |> 
+  group_by(AGEGRP, var, value) |> 
+  summarize(n = sum(WEIGHT), .groups = "drop_last") |>
+  mutate(
+    p = n / sum(n)
+  ) |> 
+  select(-n) |> 
+  pivot_wider(names_from = AGEGRP, values_from = p, values_fill = 0) |> 
+  left_join(
+    censuspumf::var_labels |> 
+      filter(var != "ATTSCH") |> 
+      bind_rows(
+        tibble(
+          var = c("lf_status", "lf_status_neet", "ATTSCH"),
+          lab = c("Labour Force Status", "Labour Force Status (NEET)", "Education: Ongoing Schooling")
+        )
+      )
+  ) |> 
+  ungroup() |> 
+  arrange(lab) |> 
+  group_by(lab)
+
+t_lfs_iy |> 
+  select(-var) |> 
+  gt(groupname_col = "lab", rowname_col = "value") |> 
+  fmt_percent(columns = c(2, 3, 4, 5), decimals = 0)
+
+
+dl_button(t_lfs, "lfs")
+```
+
 ### Employment Characteristics
 
 ```{r job-features}
